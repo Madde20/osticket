@@ -1,0 +1,41 @@
+{
+  "id": "com.osticket.cloudronapp",
+  "version": "2.2.1",
+  "upstreamVersion": "1.18.1",
+  "title": "osTicket",
+  "author": "osTicket Authors",
+  "description": "file://DESCRIPTION.md",
+  "changelog": "file://CHANGELOG.md",
+  "tagline": "Make. Happy. Customers.",
+  "healthCheckPath": "/",
+  "configurePath": "/scp/login.php",
+  "httpPort": 8000,
+  "addons": {
+    "localstorage": {},
+    "mysql": {},
+    "ldap": {},
+    "scheduler": {
+      "fetch_email": {
+        "schedule": "*/2 * * * *",
+        "command": "echo '==> Fetching mails' && sudo -E -u www-data php /app/code/upload/api/cron.php"
+      }
+    }
+  },
+  "manifestVersion": 2,
+  "website": "https://osticket.com/",
+  "contactEmail": "support@cloudron.io",
+  "icon": "file://logo.png",
+  "tags": [
+    "support", "helpdesk", "zendesk", "salesforce"
+  ],
+  "mediaLinks": [
+    "https://screenshots.cloudron.io/com.osticket.cloudronapp/Ticket_Filters_1-1024x683.jpg",
+    "https://screenshots.cloudron.io/com.osticket.cloudronapp/Customer_Portal_2-1024x683.jpg",
+    "https://screenshots.cloudron.io/com.osticket.cloudronapp/Assign_Transfer_Referral_2-1024x683.jpg"
+  ],
+  "documentationUrl": "https://docs.cloudron.io/apps/osticket",
+  "postInstallMessage": "file://POSTINSTALL.md",
+  "optionalSso": true,
+  "minBoxVersion": "7.1.5",
+  "forumUrl": "https://forum.cloudron.io/category/89/osticket"
+}
